@@ -1,7 +1,11 @@
 package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.util.Util;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
@@ -12,7 +16,6 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void createUsersTable() {
-
     }
 
     @Override
@@ -34,6 +37,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public List<User> getAllUsers() {
         return null;
     }
+
 
     @Override
     public void cleanUsersTable() {
