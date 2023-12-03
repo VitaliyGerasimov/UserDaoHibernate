@@ -14,7 +14,6 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         UserDao userDao = new UserDaoHibernateImpl();
         userDao.createUsersTable();
-        userDao.removeUserById(1);
 
         User user1 = new User("Anton", "Echmaev", (byte) 25);
         User user2 = new User("Alexander", "Anikeev", (byte) 28);
@@ -24,7 +23,10 @@ public class Main {
         userDao.saveUser(user3.getName(), user3.getLastName(), user3.getAge());
 
         List<User> users = userDao.getAllUsers();
-
         users.forEach(u -> System.out.println(u.getName()));
+        userDao.removeUserById(1);
+        userDao.getAllUsers();
+//        userDao.cleanUsersTable();
+//        userDao.dropUsersTable();
     }
 }
